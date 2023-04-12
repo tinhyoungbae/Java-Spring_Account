@@ -7,6 +7,29 @@ import org.springframework.stereotype.Component;
 import java.io.Serializable;
 
 @Entity
+
+
+@NamedNativeQuery(
+        name = "getAccount_name",
+        query =
+                "SELECT " +
+                        "  id_account, " +
+                        "  name_account " +
+                        "FROM Account ",
+        resultSetMapping = "getAccount_map"
+)
+@SqlResultSetMapping(
+        name = "getAccount_map",
+        classes = @ConstructorResult(
+                targetClass = Account.class,
+                columns = {
+                        @ColumnResult(name = "id_account", type = int.class),
+                        @ColumnResult(name = "name_account", type = String.class)
+                }
+        )
+)
+
+@Data
 @Table(name = "Account")
 public class Account implements Serializable {
     @Id

@@ -19,4 +19,5 @@ public interface iServiceAccount {
     public ResponseEntity<Response> getAnAccount(int idAccount);
 
     public ResponseEntity<Response> updateAnAccount(Account account);
+    public List<Account> findAllAccount();
 }

@@ -9,7 +9,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@RequiredArgsConstructor
 public class TinhhApplication {
 
 	public static void main(String[] args) {

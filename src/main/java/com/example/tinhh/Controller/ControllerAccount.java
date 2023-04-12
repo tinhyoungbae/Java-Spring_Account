@@ -45,5 +45,9 @@ public class ControllerAccount {
     public ResponseEntity<Response> addAccount(@RequestBody Account account){
         return serviceAccount.addAccount(account);
     }
+    @GetMapping("/account/find")
+    public List<Account> getAllAccount(){
+        return serviceAccount.findAllAccount();
+    }
 
 }

@@ -13,6 +13,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
+@Repository("accountRepo")
 public interface InterfaceAccount extends JpaRepository<Account, Integer> {
+    @Query(name = "getAccount_name", nativeQuery = true)
+    List<Account> findAllAccount();
 }
